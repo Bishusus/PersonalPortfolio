@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       skills:
         "Frontend:  HTML5, CSS3, Flexbox/Grid, JavaScript (ES6+)\nBackend:   Python, Flask, Java, C++, SQLite\nCore CS:   Prefix Trees (Tries), Huffman Coding, Data Integrity",
       projects:
-        "1. Fund Donation Website (Flask + SQLite + HTML5/CSS3)\n2. Huffman Compression Engine (Lossless Encoding)\n3. Trie Auto-Complete Data Structure (O(L) Prefix Lookup)",
+        "1. Fund Donation Website (Flask + SQLite + HTML5/CSS3)\n2. Huffman Compression Engine (Lossless Encoding)\n3. Trie Auto-Complete Data Structure (O(L) Prefix Lookup)\n4. Developer Analytics Dashboard (JavaScript + REST APIs)\n5. TaskFlow Collaboration App (Flask + JavaScript)\n6. Graph Route Optimizer (Java + Dijkstra)",
       contact:
         "Direct Email: bishesh.pradhananga@example.com\nLocation: Kathmandu, Nepal (Remote Available)",
       quote:
@@ -298,6 +298,39 @@ document.addEventListener("DOMContentLoaded", () => {
         "Speed: O(L) search time complexity where L is query length",
         "Features: Prefix matching, dictionary insertion, frequency sorting",
         "Use Case: Real-time search bars and auto-correct input systems",
+      ],
+    },
+    4: {
+      title: "Developer Analytics Dashboard",
+      category: "Full-Stack Web Application",
+      desc: "A responsive dashboard that turns application activity into useful engineering metrics and data summaries.",
+      highlights: [
+        "Frontend: Responsive JavaScript dashboard views",
+        "Integration: REST API data fetching and state updates",
+        "Storage: SQLite-backed activity and metric records",
+        "Focus: Fast scanning and clear operational insights",
+      ],
+    },
+    5: {
+      title: "TaskFlow Collaboration App",
+      category: "Full-Stack Web Application",
+      desc: "A lightweight task management workspace for organizing team work, statuses, and searchable work items.",
+      highlights: [
+        "Backend: Flask routes with structured task operations",
+        "Features: Status tracking, filtering, and search",
+        "Frontend: Responsive JavaScript interactions",
+        "Focus: Simple workflows for small development teams",
+      ],
+    },
+    6: {
+      title: "Graph Route Optimizer",
+      category: "Algorithms & Data Structures",
+      desc: "A weighted graph engine that compares connected paths and finds efficient routes with Dijkstra's algorithm.",
+      highlights: [
+        "Algorithm: Dijkstra shortest-path traversal",
+        "Data Structures: Adjacency lists and priority queues",
+        "Output: Lowest-cost route and total path weight",
+        "Complexity: O((V + E) log V) with a binary heap",
       ],
     },
   };

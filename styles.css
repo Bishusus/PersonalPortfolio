@@ -1050,7 +1050,43 @@ main {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+}
+
+.availability-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 94, 26, 0.14), rgba(255, 183, 3, 0.06));
+  border: 1px solid rgba(255, 94, 26, 0.3);
+}
+
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12), 0 0 14px rgba(34, 197, 94, 0.7);
+}
+
+.availability-card strong,
+.availability-card span {
+  display: block;
+}
+
+.availability-card strong {
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.availability-card div span {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
 }
 
 .contact-cards {
@@ -1129,6 +1165,43 @@ main {
   padding: 32px;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-kicker {
+  margin-bottom: 4px;
+  color: var(--accent-orange);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-heading h3 {
+  color: var(--text-main);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.form-step {
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .contact-form {
