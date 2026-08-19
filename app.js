@@ -59,6 +59,29 @@ const PreferenceManager = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* ─── 0. MOBILE RESPONSIVE HAMBURGER MENU ──────────────────────── */
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const headerRightWrap = document.getElementById("headerRightWrap");
+
+  if (mobileMenuBtn && headerRightWrap) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isActive = mobileMenuBtn.classList.toggle("active");
+      headerRightWrap.classList.toggle("menu-open");
+      mobileMenuBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+      // Optional sound effect on toggle
+      if (typeof playSound === "function") playSound("click");
+    });
+
+    // Close menu when clicking a nav link
+    document.querySelectorAll(".nav-list a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenuBtn.classList.remove("active");
+        headerRightWrap.classList.remove("menu-open");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   /* ─── 1. WEB AUDIO API SYNTHESIZER (NO EXTERNAL AUDIO FILES) ──── */
   let soundEnabled = true;
   let audioCtx = null;
@@ -403,6 +426,21 @@ document.addEventListener("DOMContentLoaded", () => {
     skillMetersObserver.observe(card);
   });
 
+  /* ─── 6.5 ADVANCED SCROLL REVEAL OBSERVER ────────────────────────── */
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.section, .project-card, .stat-card').forEach(el => {
+    el.classList.add('reveal-node');
+    revealObserver.observe(el);
+  });
+
   /* ─── 7. TYPEWRITER HERO HEADLINE ────────────────────────── */
   const headline = document.querySelector(".hero-headline");
   if (headline) {
@@ -645,6 +683,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
+
+    const siteHeader = document.querySelector(".site-header");
+    if (siteHeader) {
+      if (scrollY > 50) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+    }
 
     if (progressBar) {
       progressBar.style.width = (scrollY / height) * 100 + "%";
